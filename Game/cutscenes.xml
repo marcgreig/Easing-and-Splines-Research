@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cutscene_manager>
+  <cutscene id="1">
+    <action  actor="1" pos_x="-200" pos_y="600" speed="2" time="0"/>
+    <action  actor="2" pos_x="-172" pos_y="600" speed="4" time="3"/>  
+    <action  actor="2" pos_x="230" pos_y="0" speed="2" time="10"/>
+    <action  actor="1" pos_x="200" pos_y="0" speed="2" time="11"/>
+  </cutscene>
+  <cutscene id="2">
+    <action actor="1" pos_x="0" pos_y="0" speed="10" time="1"/>
+    <action actor="1" pos_x="400" pos_y="800" speed="10" time="2"/>
+    <action actor="1" pos_x="-100" pos_y="-100" speed="10" time="3"/>
+    <action actor="1" pos_x="-200" pos_y="600" speed="10" time="4"/>
+  </cutscene>
+</cutscene_manager>
