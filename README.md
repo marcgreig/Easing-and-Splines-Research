@@ -374,3 +374,18 @@ float Bounce::easeInOut(float t, float b, float c, float d) {
 
 ## Splines
 
+From a mathematical point of view, a spline is a curve that appears as a result of a function defined in parts by polynomials. Splines are commonly used in programming because they are easy to build and accurate besides their capability of aproximating complex shapes through an interactive curve design. A spline is built through various control points that define their slope and follows diverese knots.
+
+There are a lot of different types of splines but here only the most common ones will be shown:
+
+- Catmull-Rom Spline: is a type of cardinal splines that is continuous and the curve passes through all of the control points. It was formulated by Edwin Catmull and Raphael Rom.
+
+- Cubic Hermite Spline: is a spline where each piece is a third degree polynomial, just like any Cubic Spline, and it's defined by its values and first derivatives at the end points, also called Hermite form. It's named after Charles Hermite.
+
+- Linear Spline: is a continuous function defined by linear polynomials, which essentially means that is a continuous set of straight lines.
+
+- B-Spline (Basic Spline): it's a spline defined as a linear combination of control points that has a minimal support given a degree, smoothness and domain. This spline is commonly used because it allows to express any spline of a certain degree by a linear combination of B-Splines of that degree. The term B-Spline was defined by Isaac Jacob Schoenberg.
+
+- NURBS (Non-uniform rational B-Spline): is a mathematical model commonly used in computer graphics for generating and representing curves and surfaces. It is a type of B-spline that offers great flexibility and precision for handling both analytic (in mathematical form) and modeled shapes.
+
+- Bézier Spline: is a continous splines defined picewise by different Bézier curves.
