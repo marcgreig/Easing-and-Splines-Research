@@ -29,4 +29,348 @@ The other more complex classes apply a different Math method are:
 - Back allows the object to bypass the objective and then return as if there were a reverse gravity.
 - Bounce tries to imitate the movement of a bouncing ball, for example, applying an acceleration and deacceleration similar to the gravity would.
 
-The following graphs will representate their movement:
+Moreover, each of these classes excepting the Linear which actually doesn't have easing, include the ease in, ease out and ease in and out functions.
+- Ease in function describes the positive acceleration of the object.
+- Ease out function describes the negative acceleration (deacceleration) of the object.
+- Ease in and out function mixes both of the previous functions describing first and acceleration followed by a deacceleration.
+
+The following graphs will representate their movement including their coded function:
+
+- Linear without easing:
+
+```c++
+float Linear::easeNull(float t, float b, float c, float d)
+{
+	return c * t / d + b;
+}
+```
+
+- Quadratic with ease in:
+
+```c++
+float Quad::easeIn(float t, float b, float c, float d)
+{
+	t /= d;
+	return c * t*t + b;
+}
+```
+
+- Quadratic with ease out:
+
+```c++
+float Quad::easeOut(float t, float b, float c, float d)
+{
+	t /= d;
+	return -c * t*(t - 2) + b;
+}
+```
+
+- Quadratic with ease in and out:
+
+```c++
+float Quad::easeInOut(float t, float b, float c, float d)
+{
+	t /= d / 2;
+	if (t < 1) {
+		return c / 2 * t*t + b;
+	}
+	t--;
+	return -c / 2 * (t*(t - 2) - 1) + b;
+}
+```
+
+- Cubic with ease in:
+
+```c++
+float Cubic::easeIn(float t, float b, float c, float d)
+{
+	t /= d;
+	return c * t*t*t + b;
+}
+```
+
+- Cubic with ease out:
+
+```c++
+float Cubic::easeOut(float t, float b, float c, float d)
+{
+	t /= d;
+	t--;
+	return c * (t*t*t + 1) + b;
+}
+```
+
+- Cubic with ease in and out:
+
+```c++
+float Cubic::easeInOut(float t, float b, float c, float d)
+{
+	t /= d / 2;
+	if (t < 1) {
+		return c / 2 * t*t*t + b;
+	}
+	t -= 2;
+	return c / 2 * (t*t*t + 2) + b;
+}
+```
+
+- Quartic with ease in:
+
+```c++
+float Quart::easeIn(float t, float b, float c, float d)
+{
+	t /= d;
+	return c * t*t*t*t + b;
+}
+```
+
+- Quartic with ease out:
+
+```c++
+float Quart::easeOut(float t, float b, float c, float d)
+{
+	t /= d;
+	t--;
+	return -c * (t*t*t*t - 1) + b;
+}
+```
+
+- Quartic with ease in and out:
+
+```c++
+float Quart::easeInOut(float t, float b, float c, float d)
+{
+	t /= d / 2;
+	if (t < 1) return c / 2 * t*t*t*t + b;
+	t -= 2;
+	return -c / 2 * (t*t*t*t - 2) + b;
+}
+
+```
+
+- Quintic with ease in:
+
+```c++
+float Quint::easeIn(float t, float b, float c, float d)
+{
+	t /= d;
+	return c * t*t*t*t*t + b;
+}
+```
+
+- Quintic with ease out:
+
+```c++
+float Quint::easeOut(float t, float b, float c, float d)
+{
+	t /= d;
+	t--;
+	return c * (t*t*t*t*t + 1) + b;
+}
+```
+
+- Quintic with ease in and out:
+
+```c++
+float Quint::easeInOut(float t, float b, float c, float d)
+{
+	t /= d / 2;
+	if (t < 1) return c / 2 * t*t*t*t*t + b;
+	t -= 2;
+	return c / 2 * (t*t*t*t*t + 2) + b;
+}
+```
+
+- Sinusoidal with ease in:
+
+```c++
+float Sine::easeIn(float t, float b, float c, float d) {
+	return -c * cos(t / d * (PI / 2)) + c + b;
+}
+```
+
+- Sinusoidal with ease out:
+
+```c++
+float Sine::easeOut(float t, float b, float c, float d) {
+	return c * sin(t / d * (PI / 2)) + b;
+}
+```
+
+- Sinusoidal with ease in and out:
+
+```c++
+float Sine::easeInOut(float t, float b, float c, float d) {
+	return -c / 2 * (cos(PI*t / d) - 1) + b;
+}
+```
+
+- Exponential with ease in:
+
+```c++
+float Expo::easeIn(float t, float b, float c, float d) {
+	return c * pow(2, 10 * (t / d - 1)) + b;
+}
+```
+
+- Exponential with ease out:
+
+```c++
+float Expo::easeOut(float t, float b, float c, float d) {
+	return c * (-pow(2, -10 * t / d) + 1) + b;
+}
+```
+
+- Exponential with ease in and out:
+
+```c++
+float Expo::easeInOut(float t, float b, float c, float d) {
+	t /= d / 2;
+	if (t < 1) return c / 2 * pow(2, 10 * (t - 1)) + b;
+	t--;
+	return c / 2 * (-pow(2, -10 * t) + 2) + b;
+}
+```
+
+- Circular with ease in:
+
+```c++
+float Circ::easeIn(float t, float b, float c, float d) {
+	t /= d;
+	return -c * (sqrt(1 - t * t) - 1) + b;
+}
+```
+
+- Circular with ease out:
+
+```c++
+float Circ::easeOut(float t, float b, float c, float d) {
+	t /= d;
+	t--;
+	return c * sqrt(1 - t * t) + b;
+}
+```
+
+- Circular with ease in and out:
+
+```c++
+float Circ::easeInOut(float t, float b, float c, float d) {
+	t /= d / 2;
+	if (t < 1) return -c / 2 * (sqrt(1 - t * t) - 1) + b;
+	t -= 2;
+	return c / 2 * (sqrt(1 - t * t) + 1) + b;
+}
+```
+
+- Back with ease in:
+
+```c++
+float Back::easeIn(float t, float b, float c, float d) {
+	float s = 1.70158;
+	return c * (t /= d)*t*((s + 1)*t - s) + b;
+}
+```
+
+- Back with ease out:
+
+```c++
+float Back::easeOut(float t, float b, float c, float d) {
+	float s = 1.70158;
+	return c * ((t = t / d - 1)*t*((s + 1)*t + s) + 1) + b;
+}
+```
+
+- Back with ease in and out:
+
+```c++
+float Back::easeInOut(float t, float b, float c, float d) {
+	float s = 1.70158f;
+	if ((t /= d / 2) < 1) return c / 2 * (t*t*(((s *= (1.525)) + 1)*t - s)) + b;
+	return c / 2 * ((t -= 2)*t*(((s *= (1.525)) + 1)*t + s) + 2) + b;
+}
+```
+
+- Elastic with ease in:
+
+```c++
+float Elastic::easeIn(float t, float b, float c, float d) {
+	if (t == 0)
+		return b;
+	if ((t /= d) == 1)
+		return b + c;
+	float p = d * .3f;
+	float a = c;
+	float s = p / 4;
+	return -(a * pow(2, 10 * (t -= 1)) * sin((t * d - s) * (2 * PI) / p)) + b;
+}
+```
+
+- Elastic with ease out:
+
+```c++
+float Elastic::easeOut(float t, float b, float c, float d) {
+	if (t == 0) return b;
+	if ((t /= d) == 1) return b + c;
+	float p = d * .3f;
+	float a = c;
+	float s = p / 4;
+	return (a*pow(2, -10 * t) * sin((t*d - s)*(2 * PI) / p) + c + b);
+}
+```
+
+- Elastic with ease in and out:
+
+```c++
+float Elastic::easeInOut(float t, float b, float c, float d) {
+	if (t == 0)
+		return b;
+	if ((t /= d / 2) == 2)
+		return b + c;
+	float p = d * (.3f * 1.5f);
+	float a = c;
+	float s = p / 4;
+	if (t < 1)
+		return -.5f * (a * pow(2, 10 * (t -= 1)) * sin((t * d - s) * (2 * PI) / p)) + b;
+	return a * pow(2, -10 * (t -= 1)) * sin((t * d - s) * (2 * PI) / p) * .5f + c + b;
+}
+```
+
+- Bounce with ease in:
+
+```c++
+float Bounce::easeIn(float t, float b, float c, float d) {
+	return c - Bounce::easeOut(d - t, 0, c, d) + b;
+}
+```
+
+- Bounce with ease out:
+
+```c++
+float Bounce::easeOut(float t, float b, float c, float d) {
+	if ((t /= d) < (1 / 2.75)) {
+		return c * (7.5625*t*t) + b;
+	}
+	else if (t < (2 / 2.75)) {
+		return c * (7.5625*(t -= (1.5 / 2.75))*t + .75) + b;
+	}
+	else if (t < (2.5 / 2.75)) {
+		return c * (7.5625*(t -= (2.25 / 2.75))*t + .9375) + b;
+	}
+	else {
+		return c * (7.5625*(t -= (2.625 / 2.75))*t + .984375) + b;
+	}
+}
+```
+
+- Bounce with ease in and out:
+
+```c++
+float Bounce::easeInOut(float t, float b, float c, float d) {
+	if (t < d / 2) return Bounce::easeIn(t * 2, 0, c, d) * .5 + b;
+	return Bounce::easeOut(t * 2 - d, 0, c, d) * .5 + c * .5 + b;
+}
+```
+
+
+## Splines
+
