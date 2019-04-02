@@ -647,13 +647,29 @@ There are a lot of different types of splines but here only the most common ones
 ### Splines Usability
 
 The main usage of splines in videogames are to create paths for the enemies to follow. These paths should be continuous to have a smooth motion and this is exactly what a spline has to offer. In addition, any game that requires the player to level up can take use of splines to define the necessary experience needed increasingly between levels.
+
+A great example of how a spline defines the motion of a camera in 2D videogames is the game Sonic the hedgehog. Even though it also takes into account the position of the player all the loops and transitions inside the level itself are created through a spline.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/SonicSplineCamera.gif">
+</p>
+
 In 3D and VR videogames splines take a great importance in camera views, allowing the camera to move from a First Person point of view. A great example of this phenomenon is a simple rollercoaster where, if the camera follows the spline, the user can experience the view as if he were on that rollercoaster.
-Here's there's a video example of how a camera following a spline creates a more realistic view:
+Here there's a video example of how a 3D camera following a spline creates a more realistic view:
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/3DSplineCamera.gif">
 </p>
 
+## Possible improvements on the system
+
+Besides the implementation of the camera following a spline which I didn't achieve because I felt overwhelmed by the mathematics it envolves, down below there are some improvements my system need:
+- Having a more accurate value of the panning with easing functions because, as far as the camera works with integer values and the easing functions return values with decimals, a little part of the movement is lost on each iteration making the panning end not where it is supposed to.
+- Polishing my easingBetweenPoints function so it supports more tweens, currently it only supports any of the EaseOut functions.
+- Cleaning up my code and creating the functions in a separate class and not inside the scene module.
+- Creating the easing library as a defined static library instead of a source and header file, which I had actually done but had some stupid error that made me create a new project to then have to fix the error myself.
+- Creating an interpolation class to be able to handle splines to then implement the camera movement following that custom spline.
+- Adding an exercise solution so any developer can understand my code and implement it to their own project.
 
 ## References
 
