@@ -11,6 +11,8 @@ Each easing function depends on four parameters:
 - Change in value (c) which is the difference of value between the current position and the final position.
 - Duration (d) which is the total number of iterations that you want your animation to have, needs to be the current unit as the starting time.
 
+### Easing functions types
+
 There are different types of easing functions, five standard classes and some other more complex.
 
 The six standard classes use a power that ranges from 1 to 5:
@@ -33,6 +35,91 @@ Moreover, each of these classes excepting the Linear which actually doesn't have
 - Ease in function describes the positive acceleration of the object.
 - Ease out function describes the negative acceleration (deacceleration) of the object.
 - Ease in and out function mixes both of the previous functions describing first and acceleration followed by a deacceleration.
+
+### How it works?
+
+Imagine you have an animation you need to move over a surface and in order to make it more realistic you want to add some cubic ease in to its movement. To do so you need to pass the function CubicEaseIn() 4 parameters so it would look like:
+
+CubicEaseIn(currentTime, begining value, distanceToGoal, totalTime);
+
+Remember that every easing function returns a value you need to store in a variable.
+
+```c++
+float currentValue;
+```
+```c++
+currentValue = CubicEaseIn(currentTime, beginingValue, distanceToGoal, totalTime);
+```
+
+In case your program runs at 60 frames per second and you want the animation to take a total of 5 seconds, your total time would be 300 iterations (remember the units of the current and total time must be the same in order to work). Taking this into account the function would now look like this.
+
+```c++
+float currentValue;
+int totalIterations = 300;
+```
+```c++
+currentValue = CubicEaseIn(currentTime, beginingValue, distanceToGoal, totalIterations);
+```
+
+The function above would take into account the total number of iterations but it also requires the iteration the animation is at that moment. To do that you need a variable that stores the current iteration the animation is.
+
+```c++
+float currentValue;
+int totalIterations = 300;
+int currentIteration = 0;
+```
+```c++
+currentValue = CubicEaseIn(currentIteration, beginingValue, distanceToGoal, totalIterations);
+currentIteration++
+```
+
+At the moment we have the function to take into account the time it needs to run at every moment. Imagining we want an horizontal translation where the first point is at x=100 and the final value at x= 750, we need to variables that store its position to be able to import it from an XML if we wish so. As the second variable would store the distance it would look like something like this:
+
+```c++
+float currentValue;
+int totalIterations = 300;
+int currentIteration = 0;
+int firstPoint = 100;
+int secondPoint = 750;
+int distanceBetweenPoints = secondPoint - firstPoint;
+```
+```c++
+currentValue = CubicEaseIn(currentIteration, firstPoint, distanceBetweenPoints, totalIterations);
+currentIteration++
+```
+
+This would now return the exact speed the camera needs at every frame to get from one point to another. But it needs to be reset when achieving the total number of iterations to not have an infinite easing through a bool that specifies if you want an easing or not that can be activated by any condition.
+
+```c++
+float currentValue;
+bool easingActive;
+int totalIterations = 300;
+int currentIteration = 0;
+int firstPoint = 100;
+int secondPoint = 750;
+int distanceBetweenPoints = secondPoint - firstPoint;
+```
+```c++
+if (yourCondition){
+	easingActive = true;
+}
+if (easingActive){
+	currentValue = CubicEaseIn(currentIteration, firstPoint, distanceBetweenPoints, totalIterations);
+}
+if (currentIteration < totalIterations {
+	currentIteration++
+}
+else {
+	currentIterations = 0;
+	easingActive = false;
+}
+```
+
+This piece of code would now fill the currentValue with your speed at each moment so you just need to add this value to the position of your object in order to do the easing.
+
+//Video of how it would work
+
+### Easing functions graphics and code
 
 The following graphs will representate their movement including their coded function:
 
@@ -389,3 +476,6 @@ There are a lot of different types of splines but here only the most common ones
 - NURBS (Non-uniform rational B-Spline): is a mathematical model commonly used in computer graphics for generating and representing curves and surfaces. It is a type of B-spline that offers great flexibility and precision for handling both analytic (in mathematical form) and modeled shapes.
 
 - Bézier Spline: is a continous splines defined picewise by different Bézier curves.
+
+
+## References
