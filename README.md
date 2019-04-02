@@ -132,9 +132,11 @@ else {
 
 This piece of code would now fill the currentValue with your speed at each moment so you just need to add this value to the position of your object in order to do the easing.
 
-Video example of its functionality:
+#### Video example of its functionality:
 
+<p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/muhOJEfzozE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 ### Easing functions graphics and code
 
