@@ -36,6 +36,15 @@ Moreover, each of these classes excepting the Linear which actually doesn't have
 - Ease out function describes the negative acceleration (deacceleration) of the object.
 - Ease in and out function mixes both of the previous functions describing first and acceleration followed by a deacceleration.
 
+### Easing Usability
+
+In computer science easing is very useful in different areas, mainly object oriented programming, 2D or 3D animation and camera views. In photoshop and other similar animation software tools there's a curve that simulates an easing function that allows the user to define the speed over each iterations of your animation. This allows the user to avoid creating hundreds of frames for a simple movement and instead it does it automatically taking in account the distance between frame.
+In the case of camera views, an easing function allows the user to create a much more smooth experience and save up a lot of time by not having to hard code every step the camera needs to progress over its trajectory.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/easingAnimation.gif">
+</p>
+
 ### How it works?
 
 Imagine you have an animation you need to move over a surface and in order to make it more realistic you want to add some cubic ease in to its movement. To do so you need to pass the function CubicEaseIn() 4 parameters so it would look like:
@@ -132,6 +141,10 @@ float Linear::easeNull(float t, float b, float c, float d)
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/Linear.png" width="360" height="200">
+</p>
+
 - Quadratic with ease in:
 
 ```c++
@@ -142,6 +155,10 @@ float Quad::easeIn(float t, float b, float c, float d)
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuadEaseIn.png" width="360" height="200">
+</p>
+
 - Quadratic with ease out:
 
 ```c++
@@ -151,6 +168,10 @@ float Quad::easeOut(float t, float b, float c, float d)
 	return -c * t*(t - 2) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuadEaseOut.png" width="360" height="200">
+</p>
 
 - Quadratic with ease in and out:
 
@@ -166,6 +187,10 @@ float Quad::easeInOut(float t, float b, float c, float d)
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuadEaseInOut.png" width="360" height="200">
+</p>
+
 - Cubic with ease in:
 
 ```c++
@@ -175,6 +200,10 @@ float Cubic::easeIn(float t, float b, float c, float d)
 	return c * t*t*t + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CubicEaseIn.png" width="360" height="200">
+</p>
 
 - Cubic with ease out:
 
@@ -186,6 +215,10 @@ float Cubic::easeOut(float t, float b, float c, float d)
 	return c * (t*t*t + 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CubicEaseOut.png" width="360" height="200">
+</p>
 
 - Cubic with ease in and out:
 
@@ -201,6 +234,10 @@ float Cubic::easeInOut(float t, float b, float c, float d)
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CubicEaseInOut.png" width="360" height="200">
+</p>
+
 - Quartic with ease in:
 
 ```c++
@@ -210,6 +247,10 @@ float Quart::easeIn(float t, float b, float c, float d)
 	return c * t*t*t*t + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuarticEaseIn.png" width="360" height="200">
+</p>
 
 - Quartic with ease out:
 
@@ -221,6 +262,10 @@ float Quart::easeOut(float t, float b, float c, float d)
 	return -c * (t*t*t*t - 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuarticEaseOut.png" width="360" height="200">
+</p>
 
 - Quartic with ease in and out:
 
@@ -235,6 +280,10 @@ float Quart::easeInOut(float t, float b, float c, float d)
 
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuarticEaseInOut.png" width="360" height="200">
+</p>
+
 - Quintic with ease in:
 
 ```c++
@@ -244,6 +293,10 @@ float Quint::easeIn(float t, float b, float c, float d)
 	return c * t*t*t*t*t + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuinticEaseIn.png" width="360" height="200">
+</p>
 
 - Quintic with ease out:
 
@@ -255,6 +308,10 @@ float Quint::easeOut(float t, float b, float c, float d)
 	return c * (t*t*t*t*t + 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuinticEaseOut.png" width="360" height="200">
+</p>
 
 - Quintic with ease in and out:
 
@@ -268,6 +325,10 @@ float Quint::easeInOut(float t, float b, float c, float d)
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/QuinticEaseInOut.png" width="360" height="200">
+</p>
+
 - Sinusoidal with ease in:
 
 ```c++
@@ -275,6 +336,10 @@ float Sine::easeIn(float t, float b, float c, float d) {
 	return -c * cos(t / d * (PI / 2)) + c + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/SineEaseIn.png" width="360" height="200">
+</p>
 
 - Sinusoidal with ease out:
 
@@ -284,6 +349,10 @@ float Sine::easeOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/SineEaseOut.png" width="360" height="200">
+</p>
+
 - Sinusoidal with ease in and out:
 
 ```c++
@@ -291,6 +360,10 @@ float Sine::easeInOut(float t, float b, float c, float d) {
 	return -c / 2 * (cos(PI*t / d) - 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/SineEaseInOut.png" width="360" height="200">
+</p>
 
 - Exponential with ease in:
 
@@ -300,6 +373,10 @@ float Expo::easeIn(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ExpoEaseIn.png" width="360" height="200">
+</p>
+
 - Exponential with ease out:
 
 ```c++
@@ -307,6 +384,10 @@ float Expo::easeOut(float t, float b, float c, float d) {
 	return c * (-pow(2, -10 * t / d) + 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ExpoEaseOut.png" width="360" height="200">
+</p>
 
 - Exponential with ease in and out:
 
@@ -319,6 +400,10 @@ float Expo::easeInOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ExpoEaseInOut.png" width="360" height="200">
+</p>
+
 - Circular with ease in:
 
 ```c++
@@ -327,6 +412,10 @@ float Circ::easeIn(float t, float b, float c, float d) {
 	return -c * (sqrt(1 - t * t) - 1) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CircEaseIn.png" width="360" height="200">
+</p>
 
 - Circular with ease out:
 
@@ -337,6 +426,10 @@ float Circ::easeOut(float t, float b, float c, float d) {
 	return c * sqrt(1 - t * t) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CircEaseOut.png" width="360" height="200">
+</p>
 
 - Circular with ease in and out:
 
@@ -349,6 +442,10 @@ float Circ::easeInOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CircEaseInOut.png" width="360" height="200">
+</p>
+
 - Back with ease in:
 
 ```c++
@@ -357,6 +454,10 @@ float Back::easeIn(float t, float b, float c, float d) {
 	return c * (t /= d)*t*((s + 1)*t - s) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BackEaseIn.png" width="360" height="200">
+</p>
 
 - Back with ease out:
 
@@ -367,6 +468,10 @@ float Back::easeOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BackEaseOut.png" width="360" height="200">
+</p>
+
 - Back with ease in and out:
 
 ```c++
@@ -376,6 +481,10 @@ float Back::easeInOut(float t, float b, float c, float d) {
 	return c / 2 * ((t -= 2)*t*(((s *= (1.525)) + 1)*t + s) + 2) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BackEaseInOut.png" width="360" height="200">
+</p>
 
 - Elastic with ease in:
 
@@ -392,6 +501,10 @@ float Elastic::easeIn(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ElasticEaseIn.png" width="360" height="200">
+</p>
+
 - Elastic with ease out:
 
 ```c++
@@ -404,6 +517,10 @@ float Elastic::easeOut(float t, float b, float c, float d) {
 	return (a*pow(2, -10 * t) * sin((t*d - s)*(2 * PI) / p) + c + b);
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ElasticEaseOut.png" width="360" height="200">
+</p>
 
 - Elastic with ease in and out:
 
@@ -422,6 +539,10 @@ float Elastic::easeInOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/ElasticEaseInOut.png" width="360" height="200">
+</p>
+
 - Bounce with ease in:
 
 ```c++
@@ -429,6 +550,10 @@ float Bounce::easeIn(float t, float b, float c, float d) {
 	return c - Bounce::easeOut(d - t, 0, c, d) + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BounceEaseIn.png" width="360" height="200">
+</p>
 
 - Bounce with ease out:
 
@@ -449,6 +574,10 @@ float Bounce::easeOut(float t, float b, float c, float d) {
 }
 ```
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BounceEaseOut.png" width="360" height="200">
+</p>
+
 - Bounce with ease in and out:
 
 ```c++
@@ -457,6 +586,10 @@ float Bounce::easeInOut(float t, float b, float c, float d) {
 	return Bounce::easeOut(t * 2 - d, 0, c, d) * .5 + c * .5 + b;
 }
 ```
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BounceEaseInOut.png" width="360" height="200">
+</p>
 
 
 ## Splines
