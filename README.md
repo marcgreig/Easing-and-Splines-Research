@@ -1,5 +1,11 @@
 # Easing and Splines Research
 
+I am [Marc Garcia](https://www.linkedin.com/in/marc-garcia-reig-b42492183), student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/). This content is made for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://www.linkedin.com/in/ricardpillosu).
+
+## Introduction
+
+The aim of my research is to obtain codewise a library that supports over 30 easing functions developed by the lead developer [Robert Penner](https://www.linkedin.com/in/robertpenner). Moreover I had to make a camera that follows a pre-existant spline, in which I failed resoundingly in addition of a camera that translates between two points with soft acceleration based on an easing function from my library. Even though it's not completely functional I achieved something close to what was expected.
+
 ## Easing
 
 Easing functions allow to apply mathematical formulas like splines to certain animations in order to diminish the amount of work required for each animation which means that the function itself describes the movement instead of hardcoding it for each animation. Also, by giving the animation certain acceleration it allows the coder to achieve a much more smooth result. 
@@ -612,5 +618,33 @@ There are a lot of different types of splines but here only the most common ones
 
 - Bézier Spline: is a continous splines defined picewise by different Bézier curves.
 
+### Splines Usability
+
+The main usage of splines in videogames are to create paths for the enemies to follow. These paths should be continuous to have a smooth motion and this is exactly what a spline has to offer. In addition, any game that requires the player to level up can take use of splines to define the necessary experience needed increasingly between levels.
+In 3D and VR videogames splines take a great importance in camera views, allowing the camera to move from a First Person point of view. A great example of this phenomenon is a simple rollercoaster where, if the camera follows the spline, the user can experience the view as if he were on that rollercoaster.
+Here's there's a video example of how a camera following a spline creates a more realistic view:
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/3DSplineCamera.gif">
+</p>
+
 
 ## References
+
+Below I will post the sites found that helped me the most in my research:
+
+[Easing Animation](https://www.kirupa.com/html5/animating_with_easing_functions_in_javascript.htm)
+
+[Easing Graphics](https://easings.net/)
+
+[Easing Functions and Previews](http://www.gizma.com/easing/#sin1)
+
+[More Easing Functions](https://github.com/CharlotteGore/functional-easing)
+
+[Deatiled article about Easing](http://robertpenner.com/easing/)
+
+
+[Splines in Videogames](http://phildogames.com/blog/spline.html)
+
+
+[Honorable Mention for this Youtuber](https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA)
