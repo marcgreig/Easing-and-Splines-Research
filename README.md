@@ -661,7 +661,14 @@ Here there's a video example of how a 3D camera following a spline creates a mor
 <img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/3DSplineCamera.gif">
 </p>
 
+## Possible improvements on the system
 
+Besides the implementation of the camera following a spline which I didn't achieve because I felt overwhelmed by the mathematics it envolves, down below there are some improvements my system need:
+- Having a more accurate value of the panning with easing functions because, as far as the camera works with integer values and the easing functions return values with decimals, a little part of the movement is lost on each iteration making the panning end not where it is supposed to.
+- Polishing my easingBetweenPoints function so it supports more tweens, currently it only supports any of the EaseOut functions.
+- Cleaning up my code and creating the functions in a separate class and not inside the scene module.
+- Creating the easing library as a defined static library instead of a source and header file, which I had actually done but had some stupid error that made me create a new project to then have to fix the error myself.
+- Creating an interpolation class to be able to handle splines to then implement the camera movement following that custom spline.
 ## References
 
 Below I will post the sites found that helped me the most in my research:
