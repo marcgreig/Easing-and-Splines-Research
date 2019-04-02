@@ -608,15 +608,39 @@ There are a lot of different types of splines but here only the most common ones
 
 - Catmull-Rom Spline: is a type of cardinal splines that is continuous and the curve passes through all of the control points. It was formulated by Edwin Catmull and Raphael Rom.
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CatmullRomSpline.png">
+</p>
+
 - Cubic Hermite Spline: is a spline where each piece is a third degree polynomial, just like any Cubic Spline, and it's defined by its values and first derivatives at the end points, also called Hermite form. It's named after Charles Hermite.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/CubicHermiteSpline.png" width="450" height="360">
+</p>
 
 - Linear Spline: is a continuous function defined by linear polynomials, which essentially means that is a continuous set of straight lines.
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/LinearSpline.png">
+</p>
+
 - B-Spline (Basic Spline): it's a spline defined as a linear combination of control points that has a minimal support given a degree, smoothness and domain. This spline is commonly used because it allows to express any spline of a certain degree by a linear combination of B-Splines of that degree. The term B-Spline was defined by Isaac Jacob Schoenberg.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BSpline.png">
+</p>
 
 - NURBS (Non-uniform rational B-Spline): is a mathematical model commonly used in computer graphics for generating and representing curves and surfaces. It is a type of B-spline that offers great flexibility and precision for handling both analytic (in mathematical form) and modeled shapes.
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/NURBSpline.png">
+</p>
+
 - Bézier Spline: is a continous splines defined picewise by different Bézier curves.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/BezierSpline.png" width="600" height="400">
+</p>
 
 ### Splines Usability
 
