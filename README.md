@@ -13,7 +13,7 @@ In the case of a camera, instead of coding the amount of distance it needs to tr
 
 Each easing function depends on four parameters:
 - Current time (t) which is the moment where the object is.
-- Beggining value (b) which the position where the object is at the moment t.
+- Beginning value (b) which the position where the object is at the moment t.
 - Change in value (c) which is the difference of value between the current position and the final position.
 - Duration (d) which is the total number of iterations that you want your animation to have, needs to be the current unit as the starting time.
 
@@ -55,7 +55,7 @@ In the case of camera views, an easing function allows the user to create a much
 
 Imagine you have an animation you need to move over a surface and in order to make it more realistic you want to add some cubic ease in to its movement. To do so you need to pass the function CubicEaseIn() 4 parameters so it would look like:
 
-CubicEaseIn(currentTime, begining value, distanceToGoal, totalTime);
+CubicEaseIn(currentTime, beginning value, distanceToGoal, totalTime);
 
 Remember that every easing function returns a value you need to store in a variable.
 
@@ -63,7 +63,7 @@ Remember that every easing function returns a value you need to store in a varia
 float currentValue;
 ```
 ```c++
-currentValue = CubicEaseIn(currentTime, beginingValue, distanceToGoal, totalTime);
+currentValue = CubicEaseIn(currentTime, beginningValue, distanceToGoal, totalTime);
 ```
 
 In case your program runs at 60 frames per second and you want the animation to take a total of 5 seconds, your total time would be 300 iterations (remember the units of the current and total time must be the same in order to work). Taking this into account the function would now look like this.
@@ -73,7 +73,7 @@ float currentValue;
 int totalIterations = 300;
 ```
 ```c++
-currentValue = CubicEaseIn(currentTime, beginingValue, distanceToGoal, totalIterations);
+currentValue = CubicEaseIn(currentTime, beginningValue, distanceToGoal, totalIterations);
 ```
 
 The function above would take into account the total number of iterations but it also requires the iteration the animation is at that moment. To do that you need a variable that stores the current iteration the animation is.
@@ -84,7 +84,7 @@ int totalIterations = 300;
 int currentIteration = 0;
 ```
 ```c++
-currentValue = CubicEaseIn(currentIteration, beginingValue, distanceToGoal, totalIterations);
+currentValue = CubicEaseIn(currentIteration, beginningValue, distanceToGoal, totalIterations);
 currentIteration++
 ```
 
