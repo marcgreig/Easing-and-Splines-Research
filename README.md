@@ -647,8 +647,15 @@ There are a lot of different types of splines but here only the most common ones
 ### Splines Usability
 
 The main usage of splines in videogames are to create paths for the enemies to follow. These paths should be continuous to have a smooth motion and this is exactly what a spline has to offer. In addition, any game that requires the player to level up can take use of splines to define the necessary experience needed increasingly between levels.
+
+A great example of how a spline defines the motion of a camera in 2D videogames is the game Sonic the hedgehog. Even though it also takes into account the position of the player all the loops and transitions inside the level itself are created through a spline.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/SonicSplineCamera.gif">
+</p>
+
 In 3D and VR videogames splines take a great importance in camera views, allowing the camera to move from a First Person point of view. A great example of this phenomenon is a simple rollercoaster where, if the camera follows the spline, the user can experience the view as if he were on that rollercoaster.
-Here's there's a video example of how a camera following a spline creates a more realistic view:
+Here there's a video example of how a 3D camera following a spline creates a more realistic view:
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/marcgreig/Easing-and-Splines-Research/master/docs/3DSplineCamera.gif">
