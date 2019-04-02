@@ -78,6 +78,7 @@ bool j1Scene::Update(float dt)
 	
 	if (easing_active == true)
 	App->render->camera.x -= EaseCameraBetweenPoints(pointA, pointB) * dt;
+
 	// for debugging purposes
 	if (App->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
 		App->render->camera.y += 5;
@@ -138,16 +139,20 @@ bool j1Scene::SetCameraToPoint(iPoint position)
 float j1Scene::EaseCameraBetweenPoints(iPoint posA, iPoint posB)
 {
 	float value = function.backEaseOut(iterations, posA.x, posB.x - posA.x, total_iterations);
-	
-	
+
+
 	//speedY = function.linearEaseNull(iterations, 472, 572, 300);
 
 	//App->render->camera.y += speedY;
 
-	if (iterations < total_iterations)
-	iterations++;
+	if (iterations < total_iterations){
+		iterations++;
+	}
 
-	else iterations = 0;
+	else {
+		iterations = 0;
+		easing_active = false;
+	}
 
 	return value;
 }
